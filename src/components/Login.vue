@@ -1,5 +1,5 @@
 <template>
-  <div id="login-form"  class="login">
+  <div   class="login">
       {{ msg }}
       <form >
         <label>用户名</label>
