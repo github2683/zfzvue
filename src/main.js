@@ -19,6 +19,7 @@ Vue.use(Vuetify)
 // Vue.use(Vuetify,{
 //   iconfont:'mdi'
 // });
-new Vue({  router:router,store:store, render: h => h(App)}).$mount('#app')
+var app = new Vue({  router:router,store:store, render: h => h(App)}).$mount('#app')
+
 
 // new Vue({el: '#app', router, store,  render: h => h('v-content')})
