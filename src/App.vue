@@ -1,10 +1,10 @@
 <template>
   <v-app>
-
+      <!--左边栏菜单-->
       <Navigation class="leftmenu" v-bind:class="{leftshow:show,lefthide:!show}"  v-on:show-menu="show = !show "></Navigation>
 
-
-    <v-layout  class="topmenu" v-bind:class="{topshow:!show,tophide:show}">
+      <!--头条菜单-->
+      <v-layout  class="topmenu" v-bind:class="{topshow:!show,tophide:show}">
       <v-toolbar app style="position: absolute;">
         <v-toolbar-side-icon @click.stop="show = !show"></v-toolbar-side-icon>
         <v-toolbar-title>系统菜单{{show?'打开':'关闭'}}</v-toolbar-title>
@@ -22,6 +22,7 @@
         </v-container>
       </v-content>
     </v-layout>
+
   </v-app>
 
 </template>

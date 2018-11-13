@@ -8,7 +8,7 @@
                 <v-list-tile-action v-on:click="$emit('show-menu')">
                     <v-icon>home</v-icon>
                 </v-list-tile-action>
-                <v-list-tile-title>Home</v-list-tile-title>
+                <v-list-tile-title>首页</v-list-tile-title>
                 <!--<v-list-tile-action v-on:click="$emit('show-menu')">-->
                     <!--<v-icon style="margin-left:40px;cursor:pointer;">arrow_back_ios</v-icon>-->
                 <!--</v-list-tile-action>-->
@@ -19,7 +19,7 @@
                     value="true"
             >
                 <v-list-tile slot="activator">
-                    <v-list-tile-title>Users</v-list-tile-title>
+                    <v-list-tile-title>用户模块</v-list-tile-title>
                 </v-list-tile>
 
                 <v-list-group
@@ -28,7 +28,7 @@
                         value="true"
                 >
                     <v-list-tile slot="activator">
-                        <v-list-tile-title>Admin</v-list-tile-title>
+                        <v-list-tile-title>配置管理</v-list-tile-title>
                     </v-list-tile>
 
                     <v-list-tile
@@ -48,7 +48,7 @@
                         no-action
                 >
                     <v-list-tile slot="activator">
-                        <v-list-tile-title>Actions</v-list-tile-title>
+                        <v-list-tile-title>操作管理</v-list-tile-title>
                     </v-list-tile>
 
                     <v-list-tile
@@ -71,14 +71,14 @@
     export default {
         data: () => ({
             admins: [
-                ['Management', 'people_outline'],
-                ['Settings', 'settings']
+                ['管理', 'people_outline'],
+                ['配置', 'settings']
             ],
             cruds: [
-                ['Create', 'add'],
-                ['Read', 'insert_drive_file'],
-                ['Update', 'update'],
-                ['Delete', 'delete']
+                ['新增', 'add'],
+                ['查询', 'insert_drive_file'],
+                ['更新', 'update'],
+                ['删除', 'delete']
             ]
         })
     }
