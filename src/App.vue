@@ -3,24 +3,31 @@
       <!--左边栏菜单-->
       <Navigation class="leftmenu" v-bind:class="{leftshow:show,lefthide:!show}"  v-on:show-menu="show = !show "></Navigation>
 
-      <!--头条菜单-->
-      <v-layout  class="topmenu" v-bind:class="{topshow:!show,tophide:show}">
-      <v-toolbar app style="position: absolute;">
-        <v-toolbar-side-icon @click.stop="show = !show"></v-toolbar-side-icon>
-        <v-toolbar-title>系统菜单{{show?'打开':'关闭'}}</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat>超链接1</v-btn>
-          <v-btn flat>超链接2</v-btn>
-          <v-btn flat>超链接3</v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
 
-      <v-content>
-        <v-container fluid>
-          <router-view></router-view>
-        </v-container>
-      </v-content>
+      <v-layout  class="topmenu" v-bind:class="{topshow:!show,tophide:show}">
+          <!--头条菜单-->
+          <v-toolbar app style="position: absolute;">
+            <v-toolbar-side-icon @click.stop="show = !show"></v-toolbar-side-icon>
+            <v-toolbar-title>系统菜单[{{show?'打开':'关闭'}}]</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items class="hidden-sm-and-down">
+
+
+
+
+
+                <TopMenu v-bind:menu="topMenu[0]"></TopMenu>
+                <TopMenu v-bind:menu="topMenu[1]"></TopMenu>
+                <TopMenu v-bind:menu="topMenu[2]"></TopMenu>
+
+            </v-toolbar-items>
+          </v-toolbar>
+
+          <v-content>
+            <v-container fluid>
+              <router-view></router-view>
+            </v-container>
+          </v-content>
     </v-layout>
 
   </v-app>
@@ -32,19 +39,48 @@
 
 <script>
 
-// import HelloWorld from './components/HelloWorld'
-// import Menu from './components/Menu'
 import Navigation from './components/Navigation'
-
+import TopMenu from './components/TopMenu'
 
 
 export default {
   name: 'App',
-    components: {Navigation},
+    components: {TopMenu, Navigation},
     data () {
       return {
           drawerm:true,
-          show:true
+          show:true,
+          topMenu:[
+              {
+                  name:'头条菜单1',
+                  items:[
+                      { title: '子菜单1' },
+                      { title: '子菜单2' },
+                      { title: '子菜单3' },
+                      { title: '子菜单4' }
+                  ]
+              },
+              {
+                  name:'头条菜单2',
+                  items:[
+                      { title: '子菜单21' },
+                      { title: '子菜单22' },
+                      { title: '子菜单23' },
+                      { title: '子菜单24' }
+                  ]
+              },
+              {
+                  name:'头条菜单3',
+                  items:[
+                      { title: '子菜单31' },
+                      { title: '子菜单32' },
+                      { title: '子菜单33' },
+                      { title: '子菜单34' }
+                  ]
+              }
+
+          ]
+
       }
   }
 
@@ -88,11 +124,11 @@ cubic-bezier(<number>, <number>, <number>, <number>)：
     transition-duration: 0.5s;
     transition-timing-function: ease-out ;
     transition-delay: 10ms;
-    z-index: 10;
+    z-index: 2;
     position: absolute;
   }
   .topmenu{
-    z-index: 10;
+    z-index: 2;
     position: absolute;
   }
   .leftshow{

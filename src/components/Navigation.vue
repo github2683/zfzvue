@@ -54,7 +54,7 @@
                     <v-list-tile
                             v-for="(crud, i) in cruds"
                             :key="i"
-                            @click=""
+                            @click="size++"
                     >
                         <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
                         <v-list-tile-action>
@@ -70,6 +70,7 @@
 <script>
     export default {
         data: () => ({
+            size:1,
             admins: [
                 ['管理', 'people_outline'],
                 ['配置', 'settings']

@@ -19,6 +19,11 @@ export default new Router({
           component:()=> import('./views/Login.vue')
       },
       {
+          path:'/forms',
+          name:'forms',
+          component:()=> import('./views/Forms.vue')
+      },
+      {
           path: '/about',
           name: 'about',
           // route level code-splitting
