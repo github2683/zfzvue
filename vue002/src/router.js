@@ -28,13 +28,33 @@ let router = new Router({
       }
     },
     {
-      path:'/cart',
-      name:'cart',
-      component:()=> import('./views/Cart.vue'),
+      path:'/user/:model',
+      name:'user',
+      component:()=> import('./views/User.vue'),
       beforeEnter:(to,from,next) => {
         window.console.log('进入 cart 页面 ')
         next();
-      }
+      },
+      children:[
+        {
+          path:'user',
+          // name:'user',
+          component:()=>import('./views/manager/user/User.vue'),
+          beforeEnter:(to,from,next)=>{
+            window.console.log('进入 cart / user 页面 ')
+            next();
+          }
+        },
+        {
+          path:'person',
+          // name:'person',
+          component:()=>import('./views/manager/user/Person.vue'),
+          beforeEnter:(to,from,next)=>{
+            window.console.log('进入 cart / person 页面 ')
+            next();
+          }
+        }
+      ]
     }
   ]
 })

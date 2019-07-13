@@ -1,6 +1,8 @@
 <template>
-  <div class="home">
-    {{msg}}
+  <div class="user">
+    用户模块:{{msg}}
+    <br>
+    <router-view></router-view>
   </div>
 </template>
 
