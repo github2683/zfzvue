@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      Person page
+      user registry
     </div>
     <router-view/>
   </div>

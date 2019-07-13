@@ -15,8 +15,13 @@
       </v-btn>
     </v-toolbar> -->
 
+    <!-- 
+      总入口，还要为各个模块写个一个总vue,如User模块的User.vue
+      -->
     <v-content>
-       <router-view></router-view>     
+      <transition name="slide">
+       <router-view></router-view>  
+       </transition>   
     </v-content>
   </v-app>
 </template>

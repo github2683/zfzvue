@@ -32,25 +32,25 @@ let router = new Router({
       name:'user',
       component:()=> import('./views/User.vue'),
       beforeEnter:(to,from,next) => {
-        window.console.log('进入 cart 页面 ')
+        window.console.log('进入 user 页面 ')
         next();
       },
       children:[
         {
-          path:'user',
+          path:'registry',
           // name:'user',
-          component:()=>import('./views/manager/user/User.vue'),
+          component:()=>import('./views/manager/user/Registry.vue'),
           beforeEnter:(to,from,next)=>{
-            window.console.log('进入 cart / user 页面 ')
+            window.console.log('进入 user / registry 页面 ')
             next();
           }
         },
         {
-          path:'person',
-          // name:'person',
-          component:()=>import('./views/manager/user/Person.vue'),
+          path:'login',
+          // name:'user',
+          component:()=>import('./views/manager/user/Login.vue'),
           beforeEnter:(to,from,next)=>{
-            window.console.log('进入 cart / person 页面 ')
+            window.console.log('进入 user / login 页面 ')
             next();
           }
         }
