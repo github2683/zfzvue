@@ -3,10 +3,17 @@ import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-const axios = require('axios');
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+
 
 Vue.config.productionTip = false
 
+axios.defaults.baseURL = 'https://localhost';
+axios.defaults.headers.common['Authorization'] = "AUTH_TOKEN";
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {

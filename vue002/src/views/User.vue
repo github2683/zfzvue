@@ -1,7 +1,5 @@
 <template>
   <div class="user">
-    {{msg}}
-    <br/>
     <router-view></router-view>
   </div>
 </template>
