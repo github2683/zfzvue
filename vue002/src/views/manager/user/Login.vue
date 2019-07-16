@@ -101,7 +101,7 @@
     methods: {
       submit () {
         this.$validator.validateAll()
-        axios.get('http://localhost/action/user.json',{name:this.name})
+        axios.get('http://localhost/action/user.json',this)
         .then((response)=>{
           console.log('请求成功')
           console.log(response)
@@ -109,7 +109,13 @@
         .catch((error)=>{
           console.log('请求失败')
           console.log(error)
+        }).then(()=>{
+
+          console.log(' finally excute ')
         })
+
+        
+
       },
       clear () {
         this.name = ''
