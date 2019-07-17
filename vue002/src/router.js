@@ -28,7 +28,7 @@ let router = new Router({
       }
     },
     {
-      path:'/user/:model',
+      path:'/user',
       name:'user',
       component:()=> import('./views/User.vue'),
       beforeEnter:(to,from,next) => {

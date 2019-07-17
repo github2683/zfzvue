@@ -56,7 +56,7 @@
   import Vue from 'vue'
   import VeeValidate from 'vee-validate'
   const axios = require('axios');
-
+  // import router from '../../../router'
 
   Vue.use(VeeValidate)
 
@@ -104,7 +104,13 @@
         axios.get('http://localhost/action/user.json',this)
         .then((response)=>{
           console.log('请求成功')
-          console.log(response)
+          console.log(response);
+          let user = response.data;
+          this.name = user.name;
+          this.email  = user.email;
+          this.password = user.password;
+          // router.push({ name: 'user', params: { model: 'registry'}})
+          this.$router.push('/user/registry')
         })
         .catch((error)=>{
           console.log('请求失败')
